@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Enfermedades Infecciosas en el Trópico Mexicano - Creado por M.Sc. Adib Antonio Olvera Yabur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F9FF; /* Un azul muy muy claro, casi blanco */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Ajustado para mejor visualización */
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px; /* Altura base */
+            padding: 1rem;
+            background-color: #FFFFFF;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        @media (min-width: 768px) { /* md */
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .stat-card {
+            background-color: #FFFFFF;
+            border-radius: 0.75rem; /* esquinas más redondeadas */
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .text-primary { color: #0077B6; }
+        .bg-primary { background-color: #0077B6; }
+        .text-secondary { color: #00B4D8; }
+        .bg-secondary { background-color: #00B4D8; }
+        .text-accent-light { color: #90E0EF; }
+        .bg-accent-light { background-color: #90E0EF; }
+        .bg-light { background-color: #CAF0F8; }
+        .text-neutral-dark { color: #1F2937; }
+        .text-neutral-medium { color: #4B5563; }
+        .text-highlight { color: #F59E0B; }
+
+        h1, h2, h3 {
+            color: #005A8D; /* Un azul más oscuro para títulos principales */
+        }
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #0077B6;
+        }
+    </style>
+</head>
+<body class="text-neutral-dark">
+
+    <header class="bg-primary text-white py-8 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2 text-white">Enfermedades Infecciosas en el Trópico Mexicano</h1>
+            <p class="text-xl md:text-2xl text-accent-light mb-3">Impacto, Desafíos y Necesidades Urgentes en Salud Pública 🔬</p>
+            <p class="text-lg text-white font-medium">Creado por M.Sc. Adib Antonio Olvera Yabur</p>
+        </div>
+    </header>
+
+    <nav class="sticky-nav shadow-md">
+        <div class="container mx-auto px-4 py-3 flex flex-wrap justify-center space-x-4 text-sm md:text-base">
+            <a href="#region" class="nav-link font-semibold text-neutral-medium hover:text-primary">Estados Prioritarios</a>
+            <a href="#etv" class="nav-link font-semibold text-neutral-medium hover:text-primary">ETV</a>
+            <a href="#otras-zoonosis" class="nav-link font-semibold text-neutral-medium hover:text-primary">Otras Zoonosis</a>
+            <a href="#otras-enfermedades" class="nav-link font-semibold text-neutral-medium hover:text-primary">Otras Enfermedades</a>
+            <a href="#impacto" class="nav-link font-semibold text-neutral-medium hover:text-primary">Impacto</a>
+            <a href="#desafios" class="nav-link font-semibold text-neutral-medium hover:text-primary">Desafíos</a>
+            <a href="#conclusion" class="nav-link font-semibold text-neutral-medium hover:text-primary">Conclusión</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+
+        <section id="introduccion" class="mb-12">
+            <div class="stat-card text-center">
+                <h2 class="text-3xl font-bold text-primary mb-4">Una Realidad Desatendida</h2>
+                <p class="text-lg text-neutral-medium leading-relaxed">
+                    La región tropical de México enfrenta una alta prevalencia de enfermedades infecciosas, zoonóticas y tropicales. Estas condiciones, exacerbadas por factores climáticos y socioeconómicos, representan un grave problema de salud pública con un profundo impacto en las comunidades. Su estudio y control son cruciales para el bienestar y desarrollo de la región.
+                </p>
+            </div>
+        </section>
+
+        <section id="region" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6 text-center">Estados Prioritarios: El Trópico Mexicano 🗺️</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                <div class="stat-card">
+                    <h3 class="text-2xl font-semibold text-secondary mb-3 text-center">7 Entidades Federativas</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 text-center">
+                        <div class="p-3 bg-light rounded-lg"><span class="font-medium text-neutral-dark">Campeche</span></div>
+                        <div class="p-3 bg-light rounded-lg"><span class="font-medium text-neutral-dark">Chiapas</span></div>
+                        <div class="p-3 bg-light rounded-lg"><span class="font-medium text-neutral-dark">Oaxaca</span></div>
+                        <div class="p-3 bg-light rounded-lg"><span class="font-medium text-neutral-dark">Quintana Roo</span></div>
+                        <div class="p-3 bg-light rounded-lg"><span class="font-medium text-neutral-dark">Tabasco</span></div>
+                        <div class="p-3 bg-light rounded-lg"><span class="font-medium text-neutral-dark">Veracruz</span></div>
+                        <div class="p-3 bg-light rounded-lg sm:col-span-1 lg:col-span-1"><span class="font-medium text-neutral-dark">Yucatán</span></div>
+                    </div>
+                </div>
+                <div class="stat-card text-center">
+                    <h3 class="text-2xl font-semibold text-secondary mb-3">Población Estimada (2024)</h3>
+                    <p class="text-6xl font-bold text-primary">25.8 <span class="text-3xl">millones</span></p>
+                    <p class="text-neutral-medium mt-2">Habitantes en estos 7 estados, enfrentando riesgos sanitarios específicos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="etv" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">Enfermedades Transmitidas por Vector (ETV)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="stat-card">
+                    <h3 class="text-2xl font-semibold text-secondary mb-4">Dengue: Amenaza Constante</h3>
+                    <p class="text-neutral-medium mb-4">Yucatán y Quintana Roo fueron los más afectados en 2023. Oaxaca reportó 1,163 casos (tasa 27.64 por 100k hab.) y 6 defunciones. Circulan los 4 serotipos.</p>
+                    <div class="chart-container h-72 md:h-80"><canvas id="dengueChart"></canvas></div>
+                    <p class="text-sm text-neutral-medium mt-2 text-center">Casos de Dengue Confirmados (Ej. Oaxaca 2023)</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 class="text-2xl font-semibold text-secondary mb-4">Paludismo (Malaria): Focos Persistentes</h3>
+                    <p class="text-neutral-medium mb-4">Chiapas es el estado más afectado por *P. vivax* (23 casos autóctonos, SE38 2023). Oaxaca reportó 33 casos en 2023, 90.9% importados.</p>
+                    <div class="chart-container h-72 md:h-80"><canvas id="paludismoChart"></canvas></div>
+                    <p class="text-sm text-neutral-medium mt-2 text-center">Casos Autóctonos de Paludismo (*P. vivax*, SE38 2023)</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 class="text-2xl font-semibold text-secondary mb-4">Leishmaniasis: Impacto Regional</h3>
+                    <p class="text-neutral-medium mb-4">Quintana Roo (39%), Campeche (21%) y Chiapas (17%) concentraron casos nacionales (2012). Chiapas acumuló 92% de casos de Leishmaniasis Visceral (2000-2012).</p>
+                    <div class="chart-container h-72 md:h-80"><canvas id="leishmaniasisChart"></canvas></div>
+                    <p class="text-sm text-neutral-medium mt-2 text-center">Distribución de Casos de Leishmaniasis (Datos Históricos)</p>
+                </div>
+                
+                <div class="stat-card">
+                    <h3 class="text-2xl font-semibold text-secondary mb-4">Enfermedad de Chagas</h3>
+                    <p class="text-neutral-medium mb-2">Seroprevalencia nacional estimada: <span class="font-bold text-primary text-2xl">3.38%</span> (4.06 millones de casos).</p>
+                    <p class="text-neutral-medium">Yucatán muestra alta prevalencia en humanos y perros. Transmisión activa y riesgo congénito presentes.</p>
+                    <p class="text-neutral-medium mt-2">Menos del <span class="font-bold text-highlight text-xl">0.5%</span> de los afectados tendrían acceso a tratamiento.</p>
+                </div>
+
+                <div class="stat-card md:col-span-2">
+                     <h3 class="text-2xl font-semibold text-secondary mb-4 text-center">Zika y Chikungunya</h3>
+                    <p class="text-neutral-medium text-center">Aunque circularon en la Península de Yucatán (2015-2024), los reportes nacionales recientes (2024-2025) indican una disminución drástica, especialmente para Chikungunya (0 casos). La vigilancia del Síndrome Congénito Asociado a Zika (SCAZ) sigue siendo crucial.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="otras-zoonosis" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">Otras Zoonosis Relevantes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="stat-card">
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Brucelosis</h3>
+                    <p class="text-neutral-medium">Oaxaca reportó 3 casos humanos en brotes (2023). A nivel nacional: 1,663 casos (2019). Riesgo por consumo de lácteos no pasteurizados.</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Leptospirosis 📈</h3>
+                    <p class="text-neutral-medium">Yucatán reporta la mayoría de casos en la península, con un aumento en 2023. Amplia gama de reservorios animales.</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Rabia</h3>
+                    <p class="text-neutral-medium">México libre de rabia humana transmitida por perro desde 2006. Persiste el riesgo por fauna silvestre.</p>
+                </div>
+                <div class="stat-card lg:col-span-3">
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Toxoplasmosis</h3>
+                    <p class="text-neutral-medium">Quintana Roo con mayor incidencia en la península. Seroprevalencias históricas elevadas en el sureste (ej. Tabasco 67.5%). Riesgo de toxoplasmosis congénita.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="otras-enfermedades" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">Otras Enfermedades de Alto Impacto</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="stat-card">
+                    <h3 class="text-2xl font-semibold text-secondary mb-4">Hepatitis A en Oaxaca (2023)</h3>
+                    <p class="text-neutral-medium mb-4">115 casos reportados (tasa 3 por 100k hab.). Principalmente en niños de 5-9 años, sugiere brotes y deficiencias en saneamiento.</p>
+                    <div class="chart-container h-72 md:h-80"><canvas id="hepatitisAChart"></canvas></div>
+                     <p class="text-sm text-neutral-medium mt-2 text-center">Casos de Hepatitis A (Oaxaca, 2023)</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="text-2xl font-semibold text-secondary mb-4">Tuberculosis</h3>
+                    <p class="text-neutral-medium mb-2">Veracruz: <span class="font-bold text-primary text-2xl">2,167</span> personas confirmadas (2021), 98% en tratamiento.</p>
+                    <p class="text-neutral-medium">Chiapas: Históricamente con altas tasas de mortalidad, asociada a pobreza.</p>
+                    <p class="text-neutral-medium mt-2">El tratamiento es gratuito, pero la adherencia y determinantes sociales son clave.</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="text-2xl font-semibold text-secondary mb-4">Enfermedades Diarreicas Agudas (EDAs)</h3>
+                    <p class="text-neutral-medium mb-4">Altas tasas de incidencia persistentes. Oaxaca: 145,107 casos (2023). Reflejan desafíos en saneamiento y agua potable.</p>
+                    <div class="chart-container h-72 md:h-80"><canvas id="edasChart"></canvas></div>
+                    <p class="text-sm text-neutral-medium mt-2 text-center">Tasas de Incidencia de EDAs (por 100k hab.)</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="text-2xl font-semibold text-secondary mb-4">Infecciones Respiratorias Agudas (IRAs)</h3>
+                    <p class="text-neutral-medium mb-4">Principal causa de morbilidad. Oaxaca: 440,365 casos (2023). Factores como hacinamiento y contaminación intradomiciliaria influyen.</p>
+                    <div class="chart-container h-72 md:h-80"><canvas id="irasChart"></canvas></div>
+                    <p class="text-sm text-neutral-medium mt-2 text-center">Tasas de Incidencia de IRAs (por 100k hab.)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="impacto" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">Impacto Socioeconómico 💸</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="stat-card text-center">
+                    <span class="text-5xl">💰</span>
+                    <h3 class="text-xl font-semibold text-secondary my-2">Dengue</h3>
+                    <p class="text-neutral-medium">Gastos de bolsillo pueden representar <span class="font-bold text-highlight">9-45%</span> del ingreso del paciente.</p>
+                </div>
+                <div class="stat-card text-center">
+                     <span class="text-5xl">📉</span>
+                    <h3 class="text-xl font-semibold text-secondary my-2">Tuberculosis</h3>
+                    <p class="text-neutral-medium">Costos totales pueden equivaler al <span class="font-bold text-highlight">39%</span> del ingreso anual familiar. 60% por pérdida de ingresos.</p>
+                </div>
+                <div class="stat-card text-center">
+                    <span class="text-5xl">⏳</span>
+                    <h3 class="text-xl font-semibold text-secondary my-2">Enfermedad de Chagas</h3>
+                    <p class="text-neutral-medium">Pérdida de días de trabajo puede ser <span class="font-bold text-highlight">44-75%</span> del costo de por vida de la enfermedad.</p>
+                </div>
+            </div>
+            <p class="text-center text-neutral-medium mt-6 text-lg">Estas enfermedades perpetúan ciclos de pobreza, afectando desproporcionadamente a las poblaciones más vulnerables.</p>
+        </section>
+
+        <section id="desafios" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">Desafíos Clave en la Región</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="stat-card">
+                    <h3 class="text-xl font-semibold text-secondary mb-3 flex items-center"><span class="text-3xl mr-2">⚠️</span>Subregistro Significativo</h3>
+                    <ul class="list-disc list-inside text-neutral-medium space-y-1">
+                        <li>Incidencia real de arbovirus podría ser <span class="font-bold">2.4 veces</span> mayor.</li>
+                        <li>Leishmaniasis no es de notificación obligatoria nacional.</li>
+                        <li>Alta subnotificación de brucelosis humana.</li>
+                    </ul>
+                </div>
+                <div class="stat-card">
+                    <h3 class="text-xl font-semibold text-secondary mb-3 flex items-center"><span class="text-3xl mr-2">🚧</span>Barreras de Acceso</h3>
+                    <ul class="list-disc list-inside text-neutral-medium space-y-1">
+                        <li><span class="font-bold">🗺️ Geográficas:</span> En Chiapas/Oaxaca, ~20% tarda >2h en llegar a un hospital.</li>
+                        <li><span class="font-bold">💸 Económicas:</span> En Chiapas/Oaxaca, ~25% realiza gastos adicionales en servicios públicos.</li>
+                        <li><span class="font-bold">🗣️ Culturales:</span> Falta de personal bilingüe y adecuación cultural.</li>
+                    </ul>
+                </div>
+                <div class="stat-card">
+                    <h3 class="text-xl font-semibold text-secondary mb-3 flex items-center"><span class="text-3xl mr-2">🧪</span>Capacidad Diagnóstica</h3>
+                    <ul class="list-disc list-inside text-neutral-medium space-y-1">
+                        <li>Disponibilidad limitada de pruebas específicas (PCR, cultivos) en primer nivel y zonas rurales.</li>
+                        <li>Necesidad de capacitación continua del personal.</li>
+                        <li>Desafíos logísticos para envío de muestras.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="mb-12">
+            <div class="stat-card text-center bg-primary text-white">
+                <h2 class="text-3xl font-bold mb-4 text-white">Conclusión y Llamada a la Acción</h2>
+                <p class="text-lg leading-relaxed mb-4 text-gray-200">
+                    La alta carga de enfermedades infecciosas en el trópico mexicano, junto con el subregistro y las barreras de acceso, exige una acción urgente y coordinada. Es imperativo fortalecer la vigilancia epidemiológica, mejorar la capacidad diagnóstica y reducir las barreras de acceso a la salud.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-200">
+                    Se necesita mayor inversión en investigación focalizada, políticas de salud pública basadas en evidencia y adaptadas al contexto local, y un abordaje integral que considere los determinantes sociales de la salud. Combatir la "invisibilidad" de estas enfermedades es crucial para el desarrollo y bienestar del sureste mexicano.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-neutral-dark text-white text-center py-6">
+        <p class="mb-2">&copy; 2025 Infografía de Salud Pública. Basado en el "Análisis de la Situación de Enfermedades Infecciosas..."</p>
+        <p class="text-sm">Creado por M.Sc. Adib Antonio Olvera Yabur.</p>
+    </footer>
+
+    <script>
+        const населения2024 = {
+            Campeche: 1038576,
+            Chiapas: 5914879,
+            Oaxaca: 4242791,
+            QuintanaRoo: 1917252,
+            Tabasco: 2537961,
+            Veracruz: 8093517,
+            Yucatan: 2375403
+        };
+        const totalPoblacion = Object.values(населения2024).reduce((a, b) => a + b, 0);
+        
+        function wrapLabel(str, maxWidth) {
+            if (str.length <= maxWidth) return str;
+            const words = str.split(' ');
+            let currentLine = '';
+            const lines = [];
+            for (const word of words) {
+                if ((currentLine + word).length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        }
+
+        const tooltipTitleCallback = function(tooltipItems) {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#1F2937' 
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    backgroundColor: '#1F2937',
+                    titleColor: '#FFFFFF',
+                    bodyColor: '#E5E7EB',
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { color: '#4B5563' },
+                    grid: { color: '#E5E7EB' }
+                },
+                x: {
+                    ticks: { color: '#4B5563' },
+                    grid: { display: false }
+                }
+            }
+        };
+        
+        const primaryColor = '#0077B6'; // Azul Oscuro
+        const secondaryColor = '#00B4D8'; // Azul Medio
+        const accentLightColor = '#90E0EF'; // Azul Claro
+
+        // Dengue Chart
+        const dengueCtx = document.getElementById('dengueChart').getContext('2d');
+        new Chart(dengueCtx, {
+            type: 'bar',
+            data: {
+                labels: [wrapLabel('Oaxaca (2023)', 16)],
+                datasets: [{
+                    label: 'Casos Confirmados de Dengue',
+                    data: [1163],
+                    backgroundColor: [primaryColor],
+                    borderColor: [primaryColor],
+                    borderWidth: 1
+                }]
+            },
+            options: commonChartOptions
+        });
+
+        // Paludismo Chart
+        const paludismoCtx = document.getElementById('paludismoChart').getContext('2d');
+        new Chart(paludismoCtx, {
+            type: 'bar',
+            data: {
+                labels: [wrapLabel('Chiapas', 16), wrapLabel('Tabasco', 16), wrapLabel('Campeche', 16), wrapLabel('Oaxaca (Importados)', 16)],
+                datasets: [{
+                    label: 'Casos de Paludismo (P. vivax SE38 2023 / Oaxaca 2023)',
+                    data: [23, 4, 1, 30], // Oaxaca: 30 importados de 33 totales
+                    backgroundColor: [primaryColor, secondaryColor, accentLightColor, '#F59E0B'],
+                    borderColor: [primaryColor, secondaryColor, accentLightColor, '#F59E0B'],
+                    borderWidth: 1
+                }]
+            },
+            options: commonChartOptions
+        });
+
+        // Leishmaniasis Chart
+        const leishmaniasisCtx = document.getElementById('leishmaniasisChart').getContext('2d');
+        new Chart(leishmaniasisCtx, {
+            type: 'doughnut',
+            data: {
+                labels: [wrapLabel('Quintana Roo (39%)', 20), wrapLabel('Campeche (21%)', 20), wrapLabel('Chiapas (17%)', 20), wrapLabel('Otros (23%)',20)],
+                datasets: [{
+                    label: 'Distribución de Casos de Leishmaniasis (Nacional 2012)',
+                    data: [39, 21, 17, 23],
+                    backgroundColor: [primaryColor, secondaryColor, accentLightColor, '#D1D5DB'],
+                    hoverOffset: 4
+                }]
+            },
+            options: { ...commonChartOptions, scales: { x: {display:false}, y: {display:false} } }
+        });
+
+        // Hepatitis A Chart
+        const hepatitisACtx = document.getElementById('hepatitisAChart').getContext('2d');
+        new Chart(hepatitisACtx, {
+            type: 'bar',
+            data: {
+                labels: [wrapLabel('Oaxaca (2023)',16)],
+                datasets: [{
+                    label: 'Casos de Hepatitis A',
+                    data: [115],
+                    backgroundColor: [primaryColor],
+                    borderColor: [primaryColor],
+                    borderWidth: 1
+                }]
+            },
+            options: commonChartOptions
+        });
+        
+        // EDAs Chart
+        const edasCtx = document.getElementById('edasChart').getContext('2d');
+        new Chart(edasCtx, {
+            type: 'bar',
+            data: {
+                labels: [wrapLabel('Oaxaca (2023)',16), wrapLabel('Tabasco (2013)',16), wrapLabel('Quintana Roo (2012)',16)],
+                datasets: [{
+                    label: 'Tasa de Incidencia de EDAs (por 100k hab.)',
+                    data: [3420.8, 4809.09, 4895.2], // Oaxaca: 145107/4242791*100000
+                    backgroundColor: [primaryColor, secondaryColor, accentLightColor],
+                    borderColor: [primaryColor, secondaryColor, accentLightColor],
+                    borderWidth: 1
+                }]
+            },
+            options: commonChartOptions
+        });
+
+        // IRAs Chart
+        const irasCtx = document.getElementById('irasChart').getContext('2d');
+        new Chart(irasCtx, {
+            type: 'bar',
+            data: {
+                labels: [wrapLabel('Oaxaca (2023)',16), wrapLabel('Tabasco (2013)',16), wrapLabel('Quintana Roo (2012)',16)],
+                datasets: [{
+                    label: 'Tasa de Incidencia de IRAs (por 100k hab.)',
+                    data: [10379.3, 23723.05, 21632.9], // Oaxaca: 440365/4242791*100000
+                    backgroundColor: [primaryColor, secondaryColor, accentLightColor],
+                    borderColor: [primaryColor, secondaryColor, accentLightColor],
+                    borderWidth: 1
+                }]
+            },
+            options: commonChartOptions
+        });
+
+    </script>
+</body>
+</html>
